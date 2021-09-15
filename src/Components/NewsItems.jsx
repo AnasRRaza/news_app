@@ -1,15 +1,18 @@
 import React, { Component } from 'react'
 
-export class NewsItems extends Component {
+class NewsItems extends Component {
   render() {
-    let { title, description, imgUrl, newsUrl } = this.props
+    let { title, description, imgUrl, newsUrl, author, date } = this.props
     return (
-      <div className="card  my-2" style={{ width: '18rem' }}>
-        <img src={imgUrl} className="card-img-top" alt="..." />
-        <div className="card-body">
-          <h5 className="card-title">{title}</h5>
-          <p className="card-text">{description}</p>
-          <a href={newsUrl} target="_blank_" className="btn btn-sm btn-primary">Read More</a>
+      <div className="my-3">
+        <div className="card">
+          <img src={imgUrl ? imgUrl : "https://www.sampabjj.com/wp-content/uploads/2017/04/default-image-620x600.jpg"} className="card-img-top" alt="..." />
+          <div className="card-body">
+            <h5 className="card-title">{title}</h5>
+            <p className="card-text">{description}</p>
+            <p className="card-text"><small className="text-muted">By {author ? author : "Unknown"} on {new Date(date).toGMTString()}</small></p>
+            <a href={newsUrl} target="_blank_" className="btn btn-sm btn-primary">Read More</a>
+          </div>
         </div>
       </div>
     )

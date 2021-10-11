@@ -7,7 +7,7 @@ import News from "../Components/News";
 
 const Routes = () => {
 
-  const country = "us";
+  const country = "";
   const pageSize = 5;
   const apiKey = "b0f34e66f5bc44b098c1ff50655cd375"
 
@@ -27,7 +27,7 @@ const Routes = () => {
             <News apiKey={apiKey} setProgress={setProgress} key="general" pageSize={pageSize} country={country} category="general" />
           </Route>
           <Route exact path="/business">
-            <News setProgress={setProgress} key="business" pageSize={pageSize} country={country} category="business" />
+            <News apiKey={apiKey} setProgress={setProgress} key="business" pageSize={pageSize} country={country} category="business" />
           </Route>
           <Route exact path="/entertainment">
             <News apiKey={apiKey} setProgress={setProgress} key="entertainment" pageSize={pageSize} country={country} category="entertainment" />
@@ -38,11 +38,11 @@ const Routes = () => {
           <Route exact path="/health">
             <News apiKey={apiKey} setProgress={setProgress} key="health" pageSize={pageSize} country={country} category="health" />
           </Route>
-          <Route apiKey={apiKey} exact path="/science">
-            <News setProgress={setProgress} key="science" pageSize={pageSize} country={country} category="science" />
+          <Route exact path="/science">
+            <News apiKey={apiKey} setProgress={setProgress} key="science" pageSize={pageSize} country={country} category="science" />
           </Route>
-          <Route apiKey={apiKey} exact path="/sports">
-            <News setProgress={setProgress} key="sports" pageSize={pageSize} country={country} category="sports" />
+          <Route exact path="/sports">
+            <News apiKey={apiKey} setProgress={setProgress} key="sports" pageSize={pageSize} country={country} category="sports" />
           </Route>
           <Route exact path="/technology">
             <News apiKey={apiKey} setProgress={setProgress} key="technology" pageSize={pageSize} country={country} category="technology" />
